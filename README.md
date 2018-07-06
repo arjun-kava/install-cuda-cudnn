@@ -40,13 +40,22 @@
 `./your-nividia-driver.run # skip OpenGL installation and create cuda link while installation`
 
 
-## After Installation 
-`export PATH=/usr/local/cuda-x.x/bin${PATH:+:${PATH}}`
+## After Installation Config Path
+`nano /home/$USER/.bashrc`
 
-`export LD_LIBRARY_PATH=/usr/local/cuda-x.x/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}`
+append following content into file
 
-`export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-x.x/lib64`
+`export PATH=/usr/local/cuda-x.x/bin${PATH:+:${PATH}}
 
-`sudo ldconfig /usr/local/cuda-x.x/lib64`
+export LD_LIBRARY_PATH=/usr/local/cuda-x.x/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}`
 
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-x.x/lib64`
+
+then save file and execute 
+
+`source /home/$USER/.bashrc`
+
+## Verify Installation
+
+`nvcc --version`
 
